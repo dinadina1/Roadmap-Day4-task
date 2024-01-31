@@ -7,11 +7,14 @@ var odd = (num)=>{
             arr.push(num[i]);
         }
     }
+    return arr;
 }
 var arr=[];
-odd([1,2,3,4,5,6,7,8,9,10]);
-console.log("Odd Numbers are :"+arr);
+console.log("Odd Numbers are :"+odd([1,2,3,4,5,6,7,8,9,10]));
 
+/*
+    Result : Odd Numbers are :1,3,5,7,9
+*/
 //===============================================
 
 // Question 2. b) Convert all the strings to title caps in a string array
@@ -24,8 +27,11 @@ var titlecase = (str)=>{
     }
     return str.join(" ");
 }
-var output=(titlecase("hOw are you"));
-console.log(output);
+console.log(titlecase("hOw aRe you"));
+
+/*
+    Result : How Are You
+*/
 
 //=========================================================
 
@@ -39,8 +45,11 @@ var sum = (add)=>{
     }
     return num;
 }
-var n=(sum([1,2,3,4,5]));
-console.log("sum of the numbers is : "+n);
+console.log("sum of the numbers is : " + sum([1,2,3,4,5]));
+
+/*
+    Result : sum of the numbers is : 15
+*/
 
 //=========================================================
 
@@ -48,8 +57,8 @@ console.log("sum of the numbers is : "+n);
 // Using Arrow Function
 
 var prime = (num)=>{
-    var output="";
-    var count=0;
+    var output=[];
+    var count;
     for(var i=0;i<num.length;i++){
         count=0;
         if(num[i]!==1){
@@ -59,14 +68,17 @@ var prime = (num)=>{
             }
         }
         if(count==2){
-            output=output+num[i];
+            output.push(num[i]);
         }
         }
     }
     return output;
 }
-output=(prime([1,2,3,4,5]));
-console.log("Prime Numbers are "+output.split("").join(","));
+console.log("Prime Numbers are : " + prime([1,2,3,4,5]));
+
+/*
+    Result : Prime Numbers are : 2,3,5
+*/
 
 //=============================================================================
 
@@ -78,12 +90,15 @@ var palindrome = (str)=>{
     for(var i=0;i<str.length;i++){
         var st=str[i].split("").reverse().join("");
         if(st==str[i]){
-            output=output+" "+str[i];
+            output.push(str[i]);
         }
     }
     return output;
 }
-output=(palindrome(["mom","sister","dad","brother","madam"]));
-console.log("Palindromes are "+output.trim());
+console.log("Palindromes are : " + palindrome(["mom","sister","dad","brother","madam"]));
+
+/*
+    Result : Palindromes are : mom,dad,madam
+*/
 
 //====================================================================================
